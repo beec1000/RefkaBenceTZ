@@ -33,11 +33,10 @@ namespace RefkaBenceTZ
             var keresett = k.Where(d => d.Marka == "Iveco" && d.Fogyasztas < mercedes.Loero).First();
             return keresett;
         }
-        static IEnumerable<Kamion> Fogyasztas30lAlatt(List<Kamion> k)
+        static List<Kamion> Fogyasztas30lAlatt(List<Kamion> k)
         {    
             var fogyasztas = k.Where(d => d.Fogyasztas < 30).ToList();
-            var f13Lista = new List<Kamion>(fogyasztas);
-            return f13Lista;
+            return fogyasztas;
         }
         static void Main(string[] args)
         {
