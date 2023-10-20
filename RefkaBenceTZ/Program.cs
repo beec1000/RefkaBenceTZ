@@ -50,6 +50,11 @@ namespace RefkaBenceTZ
                 kamionok.Add(new Kamion(sr.ReadLine()));
             }
 
+            //if (sr != null)
+            //{
+            //    sr.Dispose();
+            //}
+
             Console.WriteLine("7. feladat");
             foreach (var i in kamionok)
             {
