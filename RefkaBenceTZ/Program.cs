@@ -20,7 +20,7 @@ namespace RefkaBenceTZ
             {
                 MANkaminonok.Add(i);
             }
-            return MANkaminonok.Count();
+            return MANkaminonok.Count;
         }
         static Kamion LegtobbetFutott(List<Kamion> k)
         {
@@ -34,13 +34,9 @@ namespace RefkaBenceTZ
             return keresett;
         }
         static IEnumerable<Kamion> Fogyasztas30lAlatt(List<Kamion> k)
-        {
-            var f13Lista = new List<Kamion>();
-            var fogyasztas = k.Where(d => d.Fogyasztas < 30);
-            foreach (var i in fogyasztas)
-            {
-                f13Lista.Add(i);
-            }
+        {    
+            var fogyasztas = k.Where(d => d.Fogyasztas < 30).ToList();
+            var f13Lista = new List<Kamion>(fogyasztas);
             return f13Lista;
         }
         static void Main(string[] args)
@@ -70,7 +66,8 @@ namespace RefkaBenceTZ
             Console.WriteLine($"A legtöbbet futott kamion adatai: {LegtobbetFutott(kamionok)}");
 
             Console.WriteLine("12. feladat");
-            Console.WriteLine("Az ilyen kamionok adatai: ");
+            Console.WriteLine("Kamion adatok: ");
+
             if (F12(kamionok) != null)
             {
                 Console.WriteLine(F12(kamionok).ToString());
@@ -87,7 +84,7 @@ namespace RefkaBenceTZ
                 Console.WriteLine($"\t{i.ToString()}");
             }
 
-            Console.WriteLine("15. feladat");
+            //15. feladat
 
             var Ujkamionok = new List<Kamion>();
             foreach (var i in kamionok)
