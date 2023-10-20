@@ -100,6 +100,8 @@ namespace RefkaBenceTZ
                 sw.WriteLine(i.ToString());
             }
 
+            //if (sr != null) sr.Dispose();
+
             Console.ReadKey();
         }
     }
